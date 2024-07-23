@@ -5,19 +5,27 @@ let root = document.querySelector("#root");
 
 let rootBasket = document.querySelector("#rootBasket");
 let btnBasket = document.querySelector("#btnBasket");
+let btnFooterBasket = document.querySelector(".btnFooterBasket");
 let basketModal = document.querySelector(".basketModal");
 let btnCloseBasket = document.querySelector(".btnCloseBasket");
 
 let formSearchCat = document.querySelector(".formSearchCat");
 let formSearchCat2 = document.querySelector(".formSearchCat2");
 
+let btnReg = document.querySelector(".btnReg");
+let regModal = document.querySelector(".regModal");
+
 let viewModal = document.querySelector(".viewModal");
 let rootView = document.querySelector("#rootView");
 let btnCloseView = document.querySelector(".btnCloseView");
 
+let maxAmountModal = document.querySelector(".maxAmountModal");
+let btnExitMaxAmount = document.querySelector(".btnExitMaxAmount");
+
 let delModal = document.querySelector(".delModal");
 let btnYes = document.querySelector(".btnYes");
 let btnNo = document.querySelector(".btnNo");
+let btnExitDel = document.querySelector(".btnExitDel");
 
 btnCloseBasket.onclick = () => {
   basketModal.close();
@@ -25,6 +33,27 @@ btnCloseBasket.onclick = () => {
 
 btnCloseView.onclick = () => {
   viewModal.close();
+};
+
+btnFooterBasket.onclick = () => {
+  basketModal.showModal();
+};
+
+btnExitMaxAmount.onclick = () => {
+  maxAmountModal.close();
+};
+
+btnNo.onclick = () => {
+  delModal.close();
+};
+
+btnExitDel.onclick = () => {
+  delModal.close();
+};
+
+btnYes.onclick = () => {
+  delDataAddCart(idxDel);
+  delModal.close();
 };
 
 formSearchCat.onsubmit = (event) => {
@@ -117,6 +146,11 @@ let data2 = null;
 btnBasket.onclick = () => {
   basketModal.showModal();
 };
+
+function openDelModal(id) {
+  idxDel = id;
+  delModal.showModal();
+}
 
 function openViewModal(id) {
   viewModal.showModal();
@@ -235,10 +269,10 @@ function getAddCart(data) {
     part2.className = "flex flex-col";
 
     let part3 = document.createElement("div");
-    part3.className = "flex gap-[10px] mt-[10px] items-center";
+    part3.className = "flex  max-md-[50px] mt-[10px] items-center";
 
     let div1 = document.createElement("div");
-    div1.className = "flex border";
+    div1.className = "flex border w-full";
 
     let div2 = document.createElement("div");
 
@@ -258,10 +292,17 @@ function getAddCart(data) {
       "<svg height='24' width='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M10 6H8H6.09813L7.22364 18.0054C7.27312 18.5332 7.30558 18.8717 7.35014 19.1287C7.39259 19.3735 7.43417 19.4648 7.46185 19.5113C7.5633 19.6818 7.71319 19.8183 7.89244 19.9034C7.94135 19.9266 8.0361 19.9595 8.28378 19.9789C8.54377 19.9993 8.88389 20 9.41403 20H14.586C15.1161 20 15.4562 19.9993 15.7162 19.9789C15.9639 19.9595 16.0587 19.9266 16.1076 19.9034C16.2868 19.8183 16.4367 19.6818 16.5381 19.5113C16.5658 19.4648 16.6074 19.3735 16.6499 19.1287C16.6944 18.8717 16.7269 18.5332 16.7764 18.0054L17.9019 6H16H14H10ZM15.874 4H18.0894L18.0977 3.91103L19.0468 4H21H22V6H21H19.9106L18.7676 18.192L18.7642 18.2282C18.7191 18.7095 18.68 19.1269 18.6205 19.4704C18.5573 19.8347 18.4597 20.1931 18.257 20.5338C17.9526 21.0454 17.503 21.4549 16.9652 21.7102C16.6071 21.8802 16.2411 21.9439 15.8725 21.9728C15.525 22 15.1058 22 14.6225 22H14.6225H14.6224H14.6224H14.586H9.41403H9.37758H9.37756H9.37754H9.37752C8.89418 22 8.47498 22 8.12748 21.9728C7.75894 21.9439 7.39294 21.8802 7.03478 21.7102C6.49703 21.4549 6.04737 21.0454 5.74303 20.5338C5.54033 20.1931 5.44271 19.8347 5.37955 19.4704C5.31998 19.1269 5.28087 18.7095 5.23576 18.2282L5.23237 18.192L4.08937 6H3H2V4H3H4.95323L5.90229 3.91103L5.91063 4H8.12602C8.57006 2.27477 10.1362 1 12 1C13.8638 1 15.4299 2.27477 15.874 4ZM10.2676 4C10.6134 3.4022 11.2597 3 12 3C12.7403 3 13.3866 3.4022 13.7324 4H10.2676ZM8.43957 8.06433L8.50195 9.06238L9.00195 17.0624L9.06433 18.0604L11.0604 17.9357L10.9981 16.9376L10.4981 8.93762L10.4357 7.93957L8.43957 8.06433ZM15.5604 8.06433L15.4981 9.06238L14.9981 17.0624L14.9357 18.0604L12.9396 17.9357L13.0019 16.9376L13.5019 8.93762L13.5643 7.93957L15.5604 8.06433Z' fill='#73787D'></path></svg>";
     btnDelAddCart.className =
       "flex items-center w-full transition-all rounded-md p-[5px] hover:bg-red-500 font-bold ";
+    btnDelAddCart.onclick = () => {
+      openDelModal(e.id);
+    };
 
     let btnHire = document.createElement("button");
     btnHire.textContent = "Hire";
     btnHire.className = "p-[5px_10px] w-full bg-yellow-400 font-medium";
+    btnHire.onclick = () => {
+      alert("Order is delivered");
+      delDataAddCart(e.id);
+    };
 
     let btnPlus = document.createElement("button");
     btnPlus.className = "p-[5px_10px] border w-full font-medium";
@@ -269,10 +310,9 @@ function getAddCart(data) {
     btnPlus.onclick = () => {
       if (inpScreen.value == e.amount) {
         btnPlus.disabled;
+        maxAmountModal.showModal();
       } else {
         inpScreen.value++;
-        putDataAddCart({ amount: inpScreen.value }, e.id);
-        console.log(inpScreen);
       }
     };
 
@@ -285,15 +325,11 @@ function getAddCart(data) {
     let btnMinus = document.createElement("button");
     btnMinus.className = "p-[5px_10px] border w-full  font-medium";
     btnMinus.innerHTML = "-";
-    if (inpScreen.value == 1) {
-      btnMinus.style.backgroundColor = "#ddd";
-    }
     btnMinus.onclick = () => {
       if (inpScreen.value == 1) {
         btnMinus.disabled;
       } else {
         inpScreen.value--;
-        putDataAddCart({ amount: inpScreen.value }, e.id);
       }
     };
 
