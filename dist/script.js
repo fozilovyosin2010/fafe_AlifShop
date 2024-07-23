@@ -69,6 +69,17 @@ async function getDataAddCart() {
 }
 getDataAddCart();
 
+async function delDataAddCart(id) {
+  try {
+    let response = await fetch(`${apiAddCart}/${id}`, {
+      method: "DELETE",
+    });
+    getDataAddCart();
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 async function putDataAddCart(obj, id) {
   try {
     let response = await fetch(`${apiAddCart}/${id}`, {
