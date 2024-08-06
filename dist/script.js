@@ -1,46 +1,28 @@
+//script.js
+
 let apiCat = "https://667ab588bd627f0dcc902914.mockapi.io/catalog_of_items";
 let apiAddCart = "https://667ab3c9bd627f0dcc90219a.mockapi.io/addTocart";
 
 let root = document.querySelector("#root");
 
-let rootBasket = document.querySelector("#rootBasket");
 let btnBasket = document.querySelector("#btnBasket");
-let btnFooterBasket = document.querySelector(".btnFooterBasket");
-let basketModal = document.querySelector(".basketModal");
-let btnCloseBasket = document.querySelector(".btnCloseBasket");
 
 let formSearchCat = document.querySelector(".formSearchCat");
 let formSearchCat2 = document.querySelector(".formSearchCat2");
-
-let btnReg = document.querySelector(".btnReg");
-let regModal = document.querySelector(".regModal");
+let inpSearchCat = document.querySelector(".inpSearchCat");
+let inpSearchCat2 = document.querySelector(".inpSearchCat2");
 
 let viewModal = document.querySelector(".viewModal");
 let rootView = document.querySelector("#rootView");
 let btnCloseView = document.querySelector(".btnCloseView");
-
-let maxAmountModal = document.querySelector(".maxAmountModal");
-let btnExitMaxAmount = document.querySelector(".btnExitMaxAmount");
 
 let delModal = document.querySelector(".delModal");
 let btnYes = document.querySelector(".btnYes");
 let btnNo = document.querySelector(".btnNo");
 let btnExitDel = document.querySelector(".btnExitDel");
 
-btnCloseBasket.onclick = () => {
-  basketModal.close();
-};
-
 btnCloseView.onclick = () => {
   viewModal.close();
-};
-
-btnFooterBasket.onclick = () => {
-  basketModal.showModal();
-};
-
-btnExitMaxAmount.onclick = () => {
-  maxAmountModal.close();
 };
 
 btnNo.onclick = () => {
@@ -64,6 +46,18 @@ formSearchCat.onsubmit = (event) => {
 formSearchCat2.onsubmit = (event) => {
   event.preventDefault();
   searchDataCat("Model", event.target["inpSearchCat"].value);
+};
+
+inpSearchCat.oninput = () => {
+  if (inpSearchCat.value.trim() == "") {
+    getDataCat();
+  }
+};
+
+inpSearchCat2.oninput = () => {
+  if (inpSearchCat.value.trim() == "") {
+    getDataCat();
+  }
 };
 
 async function searchDataCat(q, s) {
@@ -143,10 +137,7 @@ async function postDataAddCart(obj) {
 
 let data2 = null;
 
-btnBasket.onclick = () => {
-  basketModal.showModal();
-};
-
+let idxDel;
 function openDelModal(id) {
   idxDel = id;
   delModal.showModal();

@@ -45,12 +45,14 @@
             ></path>
           </svg>
         </a>
-        <button
-          class="btnCat bg-yellow-400 p-[5px_12px] max-md:bg-transparent rounded-md flex items-center"
-        >
-          <i class="bx bx-menu font-bold text-[18px]"></i>
-          <span class="max-md:hidden max-md:order-1 order-2">Catalog</span>
-        </button>
+        <a href="./catalog/catalog.html">
+          <button
+            class="btnCat bg-yellow-400 p-[5px_12px] max-md:bg-transparent rounded-md flex items-center"
+          >
+            <i class="bx bx-menu font-bold text-[18px]"></i>
+            <span class="max-md:hidden max-md:order-1 order-2">Catalog</span>
+          </button>
+        </a>
         <form
           class="formSearchCat hover:border-yellow-400 max-md:hidden w-full max-w-full text-[12px] border py-[10px] relative flex rounded-[5px]"
         >
@@ -58,7 +60,7 @@
             type="search"
             name="inpSearchCat"
             placeholder="Search by model name"
-            class="mx-[10px] w-full outline-none"
+            class="inpSearchCat mx-[10px] w-full outline-none"
           />
           <button
             class="bg-yellow-400 active:bg-black active:text-[#fff] absolute right-0 top-0 p-[10px_15px] rounded-[0_5px_5px_0]"
@@ -77,13 +79,14 @@
             <i class="text-base text-[25px] bx bxs-user"></i>
             <span class="font-normal">Register</span>
           </button>
-          <button
-            id="btnBasket"
-            class="flex max-md:hidden flex-col items-center p-[5px_12px] rounded-md"
-          >
-            <i class="text-base text-[25px] bx bx-basket"></i>
-            <span class="font-normal">Basket</span>
-          </button>
+          <a href="./basket/basket.html">
+            <button
+              class="flex max-md:hidden flex-col items-center p-[5px_12px] rounded-md"
+            >
+              <i class="text-base text-[25px] bx bx-basket"></i>
+              <span class="font-normal">Basket</span>
+            </button>
+          </a>
         </nav>
       </div>
       <div class="m-[5px_20px] hidden max-md:block">
@@ -94,7 +97,7 @@
             type="search"
             name="inpSearchCat"
             placeholder="Search by model name"
-            class="mx-[10px] w-full outline-none"
+            class="inpSearchCat2 mx-[10px] w-full outline-none"
           />
           <button
             class="bg-yellow-400 group-focus/i:bg-yellow-400 active:bg-black active:text-[#fff] absolute right-0 top-0 p-[10px_15px] rounded-[0_5px_5px_0]"
@@ -109,24 +112,37 @@
       id="root"
       class="flex justify-between gap-x-6 overflow-x-auto py-[10px] m-[10px_30px]"
     ></div>
-    <dialog
-      class="basketModal relative bg-yellow-400 p-[0_30px_10px] w-full h-full"
-    >
-      <div class="flex bg-yellow-400 py-[10px] justify-end sticky top-0">
-        <button class="btnCloseBasket font-medium text-2xl">&times</button>
+
+    <dialog class="regModal w-[50%] h-[50%] bg-yellow-400 relative">
+      <div class="flex justify-end m-[10px_30px]">
+        <button class="font-bold text-2xl btnXreg">&times</button>
       </div>
-      <div id="rootBasket"></div>
-    </dialog>
-    <dialog class="regModal">
-      <form class="formReg">
-        <div>
-          <input type="text" placeholder="Username..." />
-          <i class="bx bxs-user"></i>
+      <form
+        class="formReg flex flex-col gap-[25px] items-center absolute top-[25%] left-2 right-2"
+      >
+        <div class="border flex gap-[10px] rounded-md items-center relative">
+          <input
+            name="inpRegName"
+            class="outline-none p-[8px_12px] w-full"
+            type="text"
+            placeholder="Username..."
+          />
+          <i class="bx bxs-user absolute right-[6px]"></i>
         </div>
-        <div>
-          <input type="password" placeholder="Password..." />
-          <i class="bx bx-lock-alt"></i>
+        <div class="border flex gap-[10px] rounded-md items-center relative">
+          <input
+            name="inpRegPass"
+            class="outline-none p-[8px_12px] w-full"
+            type="password"
+            placeholder="Password..."
+          />
+          <i class="bx bx-lock-alt absolute right-[6px]"></i>
         </div>
+        <button
+          class="w-[55%] font-bold active:bg-black active:text-[#fff] border shadow-[2px_2px_10px_black] bg-[#fff] p-[8px_12px] rounded-sm"
+        >
+          Register
+        </button>
       </form>
     </dialog>
     <dialog class="viewModal p-[30px]">
@@ -159,52 +175,76 @@
       </div>
     </dialog>
 
-    <dialog class="maxAmountModal p-[10px_30px]">
-      <div class="flex justify-end p-[5px_10px]">
-        <button class="btnExitMaxAmount text-2xl font-bold cursor-pointer">
-          &times
-        </button>
-      </div>
-      <h1>It's a max amount</h1>
-    </dialog>
+    <div id="rootBasket"></div>
 
     <footer
-      class="fixed bottom-0 left-0 right-0 border-t p-[10px_30px] hidden max-md:flex items-center justify-between"
+      class="fixed bottom-0 left-0 right-0 border-t bg-gray-600 hidden max-md:block p-[0px_4px_4px]"
     >
-      <a class="flex flex-col items-center" href="#">
-        <i class="bx bxs-home text-[25px] text-gray-500"></i>
-        <span class="font-medium text-gray-500">home</span>
-      </a>
-      <a class="flex flex-col items-center" href="./dist/catalog.html">
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          class="stroke-gray-500 fill-gray-500"
+      <div
+        class="rounded-[20px] m-[5px_0_0] bg-gray-800 p-[2px_10px] hidden max-md:flex items-center justify-between"
+      >
+        <a
+          class="flex flex-col items-center active:bg-[#fff] group/home p-[5px_12px] rounded-md"
+          href="#"
         >
-          <path
-            stroke-width="0"
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M10 9C10 6.23858 12.2386 4 15 4C17.7614 4 20 6.23858 20 9C20 11.7614 17.7614 14 15 14C12.2386 14 10 11.7614 10 9ZM15 2C11.134 2 8 5.13401 8 9C8 12.866 11.134 16 15 16C15.8749 16 16.7122 15.8395 17.4843 15.5464L20.1182 20.4716C20.3786 20.9586 20.9846 21.1423 21.4716 20.8818C21.9586 20.6214 22.1423 20.0154 21.8818 19.5284L19.2331 14.5755C20.9145 13.2969 22 11.2752 22 9C22 5.13401 18.866 2 15 2Z"
-          ></path>
-          <path d="M3 12H5" stroke-width="2" stroke-linecap="round"></path>
-          <path d="M3 16H7" stroke-width="2" stroke-linecap="round"></path>
-          <path d="M3 20H13" stroke-width="2" stroke-linecap="round"></path>
-        </svg>
-        <span class="font-medium text-gray-500">Catalog</span>
-      </a>
-      <button class="btnFooterBasket flex flex-col items-center" href="#">
-        <i class="bx bx-basket text-[25px] text-gray-500"></i>
-        <span class="font-medium text-gray-500">Basket</span>
-      </button>
-      <button class="hidden max-md:flex flex-col items-center" href="#">
-        <i class="bx bx-user text-[25px] text-gray-500"></i>
-        <span class="font-medium text-gray-500">Register</span>
-      </button>
+          <i
+            class="bx bxs-home text-[25px] group-active/home:text-black text-[#fff]"
+          ></i>
+          <span class="font-medium group-active/home:text-black text-[#fff]"
+            >home</span
+          >
+        </a>
+        <a
+          class="flex flex-col items-center group/cat active:bg-[#fff] active:text-black p-[5px_12px] rounded-md"
+          href="./catalog/catalog.html"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="stroke-[#fff] fill-[#fff] group-active/cat:fill-black group-active/cat:stroke-black"
+          >
+            <path
+              stroke-width="0"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M10 9C10 6.23858 12.2386 4 15 4C17.7614 4 20 6.23858 20 9C20 11.7614 17.7614 14 15 14C12.2386 14 10 11.7614 10 9ZM15 2C11.134 2 8 5.13401 8 9C8 12.866 11.134 16 15 16C15.8749 16 16.7122 15.8395 17.4843 15.5464L20.1182 20.4716C20.3786 20.9586 20.9846 21.1423 21.4716 20.8818C21.9586 20.6214 22.1423 20.0154 21.8818 19.5284L19.2331 14.5755C20.9145 13.2969 22 11.2752 22 9C22 5.13401 18.866 2 15 2Z"
+            ></path>
+            <path d="M3 12H5" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M3 16H7" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M3 20H13" stroke-width="2" stroke-linecap="round"></path>
+          </svg>
+          <span class="font-medium group-active/cat:text-black text-[#fff]"
+            >Catalog</span
+          >
+        </a>
+        <a href="./basket/basket.html">
+          <button
+            class="btnFooterBasket flex flex-col items-center active:bg-[#fff] group/basket p-[5px_12px] rounded-md"
+          >
+            <i
+              class="bx bx-basket text-[25px] text-[#fff] group-active/basket:text-black"
+            ></i>
+            <span class="font-medium text-[#fff] group-active/basket:text-black"
+              >Basket</span
+            >
+          </button>
+        </a>
+        <button
+          class="hidden max-md:flex flex-col items-center active:bg-[#fff] group/reg p-[5px_12px] rounded-md"
+          href="#"
+        >
+          <i
+            class="bx bx-user text-[25px] text-[#fff] group-active/reg:text-black"
+          ></i>
+          <span class="font-medium text-[#fff] group-active/reg:text-black"
+            >Register</span
+          >
+        </button>
+      </div>
     </footer>
-    <script type="module" src="./dist/script.js"></script>
+    <script src="../dist/script.js"></script>
   </body>
 </html>
