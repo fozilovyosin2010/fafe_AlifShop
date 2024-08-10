@@ -175,13 +175,16 @@
       </div>
     </dialog>
 
-    <div id="rootBasket"></div>
-
+    <button
+      class="btnOpenFooter p-[5px_10px] rounded-[15px] m-[10px] max-md:block hidden fixed bottom-[10px] left-[10px] text-[#fff] text-2xl bg-gray-800"
+    >
+      <i class="icon bx bxs-chevron-right rotate-[270deg]"></i>
+    </button>
     <footer
-      class="fixed bottom-0 left-0 right-0 border-t bg-gray-600 hidden max-md:block p-[0px_4px_4px]"
+      class="footer fixed hidden max-md:block bottom-0 left-0 right-0 bg-[#fff] border-t-[3px] border-[#ddd]"
     >
       <div
-        class="rounded-[20px] m-[5px_0_0] bg-gray-800 p-[2px_10px] hidden max-md:flex items-center justify-between"
+        class="rounded-[20px] flex bg-gray-800 p-[2px_10px] m-[10px] items-center justify-between"
       >
         <a
           class="flex flex-col items-center active:bg-[#fff] group/home p-[5px_12px] rounded-md"
@@ -196,7 +199,7 @@
         </a>
         <a
           class="flex flex-col items-center group/cat active:bg-[#fff] active:text-black p-[5px_12px] rounded-md"
-          href="./catalog/catalog.html"
+          href="../catalog/catalog.html"
         >
           <svg
             width="24"
@@ -222,8 +225,11 @@
         </a>
         <a href="./basket/basket.html">
           <button
-            class="btnFooterBasket flex flex-col items-center active:bg-[#fff] group/basket p-[5px_12px] rounded-md"
+            class="btnBasket flex flex-col items-center relative active:bg-[#fff] group/basket p-[5px_12px] rounded-md"
           >
+            <div
+              class="basketNumDiv w-[25%] h-[15px] flex items-center justify-center text-[#fff] font-bold rounded-full bg-red-600 absolute top-[5%] right-[15%]"
+            ></div>
             <i
               class="bx bx-basket text-[25px] text-[#fff] group-active/basket:text-black"
             ></i>
@@ -233,7 +239,7 @@
           </button>
         </a>
         <button
-          class="hidden max-md:flex flex-col items-center active:bg-[#fff] group/reg p-[5px_12px] rounded-md"
+          class="flex max-md:flex flex-col items-center active:bg-[#fff] group/reg p-[5px_12px] rounded-md"
           href="#"
         >
           <i
@@ -243,8 +249,14 @@
             >Register</span
           >
         </button>
+        <button
+          class="btnCloseFooter p-[5px_10px] rounded-[50%] text-[#fff] text-2xl bg-transparent"
+        >
+          <i class="bx bxs-chevron-right rotate-[0deg]"></i>
+        </button>
       </div>
     </footer>
-    <script src="../dist/script.js"></script>
+
+    <script type="module" src="../dist/script.js"></script>
   </body>
 </html>

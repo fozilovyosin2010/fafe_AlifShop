@@ -76,8 +76,7 @@
             <span class="font-normal">Register</span>
           </button>
           <button
-            id="btnBasket"
-            class="flex max-md:hidden flex-col items-center p-[5px_12px] rounded-md"
+            class="btnBasket flex max-md:hidden flex-col items-center p-[5px_12px] rounded-md"
           >
             <i class="text-base text-[25px] bx bx-basket"></i>
             <span class="font-normal">Basket</span>
@@ -102,9 +101,11 @@
         </form>
       </div>
     </header>
-    <div class="m-[10px_20px] font-bold text-[18px]">Catalog of goods</div>
+    <div class="m-[10px_20px] font-bold overflow-y-auto text-[18px]">
+      Catalog of goods
+    </div>
 
-    <div class="flex flex-wrap justify-between m-[10px_20px] gap-[15px]">
+    <div class="flex flex-wrap justify-between m-[10px_20px_90px] gap-[15px]">
       <div class="w-[150px]">
         <div>
           <img
@@ -152,7 +153,6 @@
       <div class="flex bg-yellow-400 py-[10px] justify-end sticky top-0">
         <button class="btnCloseBasket font-medium text-2xl">&times</button>
       </div>
-      <div id="rootBasket"></div>
     </dialog>
     <dialog class="viewModal p-[30px]">
       <div class="flex justify-end mb-3">
@@ -181,19 +181,17 @@
       </div>
     </dialog>
 
-    <dialog class="maxAmountModal p-[10px_30px]">
-      <div class="flex justify-end p-[5px_10px]">
-        <button class="btnExitMaxAmount text-2xl font-bold cursor-pointer">
-          &times
-        </button>
-      </div>
-      <h1>It's a max amount</h1>
-    </dialog>
+    <button
+      class="btnOpenFooter p-[5px_10px] rounded-[15px] m-[10px] max-md:block hidden fixed bottom-[10px] left-[10px] text-[#fff] text-2xl bg-gray-800"
+    >
+      <i class="icon bx bxs-chevron-right rotate-[270deg]"></i>
+    </button>
+
     <footer
-      class="fixed bottom-0 left-0 right-0 border-t bg-gray-600 hidden max-md:block p-[0px_4px_4px]"
+      class="footer fixed hidden max-md:block bottom-0 left-0 right-0 border-t-[3px] border-[#ddd]"
     >
       <div
-        class="rounded-[20px] m-[5px_0_0] bg-gray-800 p-[2px_10px] hidden max-md:flex items-center justify-between"
+        class="rounded-[20px] flex bg-gray-800 p-[2px_10px] m-[10px] items-center justify-between"
       >
         <a
           class="flex flex-col items-center active:bg-[#fff] group/home p-[5px_12px] rounded-md"
@@ -232,9 +230,9 @@
             >Catalog</span
           >
         </a>
-        <a href="./basket/basket.html">
+        <a href="../basket/basket.html">
           <button
-            class="btnFooterBasket flex flex-col items-center active:bg-[#fff] group/basket p-[5px_12px] rounded-md"
+            class="flex flex-col items-center relative active:bg-[#fff] group/basket p-[5px_12px] rounded-md"
           >
             <i
               class="bx bx-basket text-[25px] text-[#fff] group-active/basket:text-black"
@@ -245,7 +243,7 @@
           </button>
         </a>
         <button
-          class="hidden max-md:flex flex-col items-center active:bg-[#fff] group/reg p-[5px_12px] rounded-md"
+          class="flex max-md:flex flex-col items-center active:bg-[#fff] group/reg p-[5px_12px] rounded-md"
           href="#"
         >
           <i
@@ -255,7 +253,13 @@
             >Register</span
           >
         </button>
+        <button
+          class="btnCloseFooter p-[5px_10px] rounded-[50%] text-[#fff] text-2xl bg-transparent"
+        >
+          <i class="bx bxs-chevron-right rotate-[0deg]"></i>
+        </button>
       </div>
     </footer>
+    <script type="module" src="../basket/basket.js"></script>
   </body>
 </html>
