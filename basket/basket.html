@@ -42,7 +42,7 @@
         </button>
       </div>
     </dialog>
-    <div id="rootBasket" class="flex flex-col mb-[50px] md:ml-[10%]"></div>
+    <div id="rootBasket" class="flex flex-col mb-[50px] md:pl-[10%]"></div>
 
     <button
       class="btnOpenFooter p-[5px_10px] rounded-[15px] m-[10px] max-md:block hidden fixed bottom-[10px] left-[10px] text-[#fff] text-2xl bg-gray-800"
@@ -125,22 +125,21 @@
     </footer>
 
     <!-- for laptop size -->
-
     <button
-      class="btnOpenFooterLG max-md:hidden p-[5px_10px] fixed top-[20%] left-[20px] rounded-[50%] text-[#fff] text-2xl bg-gray-800"
+      class="p-[10px_15px] rounded-[15px] hidden md:block fixed left-[20px] bottom-[30px] text-[#fff] text-2xl bg-gray-800"
     >
-      <i class="bx bxs-chevron-right rotate-[0deg]"></i>
+      <i class="iconCloseLG bx bxs-chevron-right rotate-[0deg]"></i>
     </button>
 
     <footer
-      class="footerLG fixed max-md:hidden top-[15%] flex juctify-center bottom-[10%]"
+      class="footerLG fixed flex justify-around p-[20px_5px] gap-[10px] max-md:hidden h-[90%] bottom-[0px]"
     >
       <div
-        class="rounded-[20px] flex flex-col bg-gray-800 p-[2px_10px] m-[10px] items-center justify-evenly gap-[10px]"
+        class="rounded-[20px] flex flex-col bg-gray-800 p-[2px_5px] m-[10px] items-center justify-between gap-[5px]"
       >
         <a
           class="flex flex-col items-center active:bg-[#fff] group/home p-[10px_5px] rounded-md"
-          href="#"
+          href="../index.html"
         >
           <i
             class="bx bxs-home text-[25px] group-active/home:text-black text-[#fff]"
@@ -151,7 +150,7 @@
         </a>
         <a
           class="flex flex-col items-center group/cat active:bg-[#fff] active:text-black p-[10px_5px] rounded-md"
-          href="./catalog/catalog.html"
+          href="../catalog/catalog.html"
         >
           <svg
             width="24"
@@ -175,7 +174,7 @@
             >Catalog</span
           >
         </a>
-        <a href="./basket/basket.html">
+        <a href="#">
           <button
             class="flex flex-col items-center active:bg-[#fff] group/basket p-[10px_5px] rounded-md"
           >
@@ -189,7 +188,6 @@
         </a>
         <button
           class="flex max-md:flex flex-col items-center active:bg-[#fff] group/reg p-[10px_5px] rounded-md"
-          href="#"
         >
           <i
             class="bx bx-user text-[25px] text-[#fff] group-active/reg:text-black"
@@ -205,6 +203,14 @@
         </button>
       </div>
     </footer>
-    <script type="module" src="./basket.js"></script>
+    <script src="./basket.js"></script>
   </body>
 </html>
+<!-- 
+hello AI
+
+I have created a responsive and interactive HTML5 e-commerce website with a shopping cart feature. The website includes a header, main navigation, footer, and a product catalog.
+
+To make the website responsive, I utilized CSS media queries to adjust the layout and styling based on the screen size. The header and footer remain fixed at the top and bottom of the viewport, while the main navigation changes to a hamburger menu for smaller screens.
+
+The product catalog is displayed using a grid layout with different product images, titles, prices, and descriptions. Clicking on a product image redirects the user to a separate product page. -->

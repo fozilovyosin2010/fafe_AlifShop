@@ -101,11 +101,15 @@
         </form>
       </div>
     </header>
-    <div class="m-[10px_20px] font-bold overflow-y-auto text-[18px]">
+    <div
+      class="m-[10px_20px] font-bold md:pl-[10%] overflow-y-auto text-[18px]"
+    >
       Catalog of goods
     </div>
 
-    <div class="flex flex-wrap justify-between m-[10px_20px_90px] gap-[15px]">
+    <div
+      class="flex flex-wrap justify-between md:pl-[10%] m-[10px_20px_90px] gap-[15px]"
+    >
       <div class="w-[150px]">
         <div>
           <img
@@ -257,6 +261,85 @@
           class="btnCloseFooter p-[5px_10px] rounded-[50%] text-[#fff] text-2xl bg-transparent"
         >
           <i class="bx bxs-chevron-right rotate-[0deg]"></i>
+        </button>
+      </div>
+    </footer>
+
+    <button
+      class="btnOpenFooterLG p-[10px_15px] rounded-[15px] hidden md:block fixed left-[20px] bottom-[30px] text-[#fff] text-2xl bg-gray-800"
+    >
+      <i class="iconCloseLG bx bxs-chevron-right rotate-[0deg]"></i>
+    </button>
+    <footer
+      class="footerLG fixed flex justify-around p-[20px_5px] gap-[10px] max-md:hidden h-[90%] bottom-[0px]"
+    >
+      <div
+        class="rounded-[20px] flex flex-col bg-gray-800 p-[2px_5px] m-[10px] items-center justify-between gap-[5px]"
+      >
+        <a
+          class="flex flex-col items-center active:bg-[#fff] group/home p-[10px_5px] rounded-md"
+          href="../index.html"
+        >
+          <i
+            class="bx bxs-home text-[25px] group-active/home:text-black text-[#fff]"
+          ></i>
+          <span class="font-medium group-active/home:text-black text-[#fff]"
+            >home</span
+          >
+        </a>
+        <a
+          class="flex flex-col items-center group/cat active:bg-[#fff] active:text-black p-[10px_5px] rounded-md"
+          href="#"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="stroke-[#fff] fill-[#fff] group-active/cat:fill-black group-active/cat:stroke-black"
+          >
+            <path
+              stroke-width="0"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M10 9C10 6.23858 12.2386 4 15 4C17.7614 4 20 6.23858 20 9C20 11.7614 17.7614 14 15 14C12.2386 14 10 11.7614 10 9ZM15 2C11.134 2 8 5.13401 8 9C8 12.866 11.134 16 15 16C15.8749 16 16.7122 15.8395 17.4843 15.5464L20.1182 20.4716C20.3786 20.9586 20.9846 21.1423 21.4716 20.8818C21.9586 20.6214 22.1423 20.0154 21.8818 19.5284L19.2331 14.5755C20.9145 13.2969 22 11.2752 22 9C22 5.13401 18.866 2 15 2Z"
+            ></path>
+            <path d="M3 12H5" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M3 16H7" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M3 20H13" stroke-width="2" stroke-linecap="round"></path>
+          </svg>
+          <span class="font-medium group-active/cat:text-black text-[#fff]"
+            >Catalog</span
+          >
+        </a>
+        <a href="../basket/basket.html">
+          <button
+            class="flex flex-col items-center active:bg-[#fff] group/basket p-[10px_5px] rounded-md"
+          >
+            <i
+              class="bx bx-basket text-[25px] text-[#fff] group-active/basket:text-black"
+            ></i>
+            <span class="font-medium text-[#fff] group-active/basket:text-black"
+              >Basket</span
+            >
+          </button>
+        </a>
+        <button
+          class="flex max-md:flex flex-col items-center active:bg-[#fff] group/reg p-[10px_5px] rounded-md"
+          href="#"
+        >
+          <i
+            class="bx bx-user text-[25px] text-[#fff] group-active/reg:text-black"
+          ></i>
+          <span class="font-medium text-[#fff] group-active/reg:text-black"
+            >Register</span
+          >
+        </button>
+        <button
+          class="btnCloseFooterLG p-[10px_5px] rounded-[50%] text-[#fff] text-2xl bg-transparent"
+        >
+          <i class="iconLG bx bxs-chevron-right rotate-[90deg]"></i>
         </button>
       </div>
     </footer>

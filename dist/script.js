@@ -1,10 +1,9 @@
 import {
+  btnCloseFooter,
   btnOpenFooter,
   footer,
   icon,
-  btnCloseFooter,
 } from "../basket/basket.js";
-let apiAddCart = "https://667ab3c9bd627f0dcc90219a.mockapi.io/addTocart";
 
 let apiCat = "https://667ab588bd627f0dcc902914.mockapi.io/catalog_of_items";
 
@@ -55,11 +54,58 @@ inpSearchCat.oninput = () => {
   }
 };
 
+btnCloseFooter.onclick = () => {
+  iconLG.classList.toggle("animate-[rotate2_.3s_linear_1]");
+};
+
 inpSearchCat2.oninput = () => {
   if (inpSearchCat.value.trim() == "") {
     getDataCat();
   }
 };
+
+// let iconLG = document.querySelector(".iconLG");
+// let btnCloseFooterLG = document.querySelector(".btnCloseFooterLG");
+// let footerLG = document.querySelector(".footerLG");
+// let btnOpenFooterLG = document.querySelector(".btnOpenFooterLG");
+// let iconCloseLG = document.querySelector(".iconCloseLG");
+
+// btnCloseFooterLG.onclick = () => {
+//   iconLG.classList.toggle("animate-[rotateLG2_.3s_ease-in-out_1]");
+//   iconLG.classList.toggle("rotate-[90deg]");
+//   console.log(iconLG);
+
+//   setTimeout(() => {
+//     footerLG.classList.add("animate-[heightLG2_.3s_linear_1]");
+//     footerLG.classList.remove("animate-[heightLG_.3s_linear_1]");
+//   }, 300);
+//   setTimeout(() => {
+//     footerLG.classList.toggle("hidden");
+//     footerLG.classList.remove("animate-[heightLG2_.3s_linear_1]");
+//     iconLG.classList.toggle("animate-[rotateLG2_.3s_ease-in-out_1]");
+//     rootBasket.classList.toggle("md:pl-[10%]");
+//   }, 600);
+// };
+
+// btnOpenFooterLG.onclick = () => {
+//   iconCloseLG.classList.toggle("rotate-[0deg]");
+//   iconCloseLG.classList.toggle("animate-[rotateLG_.3s_linear_1]");
+//   iconCloseLG.classList.toggle("rotate-[90deg]");
+
+//   setTimeout(() => {
+//     footerLG.classList.toggle("animate-[heightLG_.3s_linear_1]");
+//     footerLG.classList.toggle("hidden");
+
+//     iconLG.classList.toggle("rotate-[0deg]");
+//     iconLG.classList.toggle("rotate-[90deg]");
+//   }, 600);
+//   setTimeout(() => {
+//     footerLG.classList.remove("animate-[heightLG_.3s_linear_1]");
+//     iconCloseLG.classList.toggle("rotate-[90deg]");
+//     iconCloseLG.classList.toggle("animate-[rotateLG_.3s_linear_1]");
+//     rootBasket.classList.toggle("md:pl-[10%]");
+//   }, 800);
+// };
 
 async function searchDataCat(q, s) {
   try {
